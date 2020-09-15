@@ -1,0 +1,27 @@
+<div class="all">
+<div>
+  <button mat-flat-button color="accent" [routerLink]="['/users']"> Voltar</button>
+    <h3>Editar Usuário</h3>
+  </div>
+  <form class="example-container" [formGroup]="productForm" (ngSubmit)="updateUser(productForm.value)">
+    <div class="formu">
+    <mat-form-field>
+      <input matInput name="nome" placeholder="Nome" formControlName="nome">
+    </mat-form-field> <div class="divider" > </div>
+    <mat-form-field>
+      <textarea  matInput name="cpf" placeholder="CPF" formControlName="cpf"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="idade" placeholder="Idade" formControlName="idade">
+    </mat-form-field> <div class="divider" > </div>
+    <mat-form-field>
+      <input matInput name="email" placeholder="Email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="telefone" placeholder="Telefone" formControlName="telefone">
+    </mat-form-field> <div class="divider" > </div>
+   <button type="submit" [disabled]="!productForm.valid" mat-button>Editar</button>
+  </div>
+  </form>
+
+</div>

@@ -1,0 +1,29 @@
+.all {
+    height: 100vh;
+}
+.example-container{
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+}
+
+.formu {
+    margin-left: 50vh;
+    margin-right: 50vh;
+}
+
+.divider {
+    min-width: 5vh;
+    height: auto;
+    display: inline-block;
+}
