@@ -7,7 +7,6 @@ import {User} from 'src/model/user';
 @Component({selector: 'app-users-new', templateUrl: './users-new.component.html', styleUrls: ['./users-new.component.scss']})
 export class UsersNewComponent implements OnInit {
 
-  user = {} as User;
   productForm: FormGroup;
   isLoadingResults = false;
 
@@ -30,11 +29,8 @@ export class UsersNewComponent implements OnInit {
             const id = res['id'];
             this.isLoadingResults = false;
             this.router.navigate(['/users-info/', id]);
-
         }, (err) => {
-
             console.log(err);
-
             this.isLoadingResults = false;
         });
     }

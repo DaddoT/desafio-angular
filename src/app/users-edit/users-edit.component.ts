@@ -13,13 +13,7 @@ import {ApiService} from 'src/service/api.service';
 @Component({selector: 'app-users-edit', templateUrl: './users-edit.component.html', styleUrls: ['./users-edit.component.scss']})
 export class UsersEditComponent implements OnInit {
 
-    id : number = null;
     productForm : FormGroup;
-    nome : String = '';
-    cpf : number = null;
-    idade : number = null;
-    email : String = '';
-    telefone : number = null;
     isLoadingResults = false;
 
     constructor(private router : Router, private route : ActivatedRoute, private api : ApiService, private formBuilder : FormBuilder) {}

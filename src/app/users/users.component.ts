@@ -16,7 +16,7 @@ export class UsersComponent implements OnInit {
         'edit',
         'delete'
     ];
-    ids : number[] = [];
+
     dataSource : User[];
 
     constructor(private _api : ApiService, private router : Router, private _snackBar : MatSnackBar) {}
