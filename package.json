@@ -1,6 +1,9 @@
 {
   "name": "desafio-angular-new",
   "version": "12.18.3",
+  "engines": {
+  "node": "12.x"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
