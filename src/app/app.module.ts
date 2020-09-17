@@ -19,7 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-// import {MAT_SNACK_BAR_DEFAULT_OPTIONS} from '@angular/material/snack-bar';
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { UsersSearchComponent } from './users-search/users-search.component';
@@ -51,11 +51,13 @@ import { UsersSearchComponent } from './users-search/users-search.component';
     MatSidenavModule,  
     MatTableModule,
     MatToolbarModule,
-    LayoutModule
+    LayoutModule,
+    MatSnackBarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
-  // provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}
+  providers: [
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 10000}}
+  ],
+  bootstrap: [AppComponent],
 })
 
 export class AppModule { }

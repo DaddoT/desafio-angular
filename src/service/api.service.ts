@@ -49,6 +49,7 @@ export class ApiService {
 
   // adiciona um User ao db
   addUser(user): Observable<User> {
+    console.log(JSON.stringify(user))
     return this.httpClient.post<User>(this.url, JSON.stringify(user), this.httpOptions)
       .pipe(
         catchError(this.handleError)
@@ -58,7 +59,7 @@ export class ApiService {
   // utualiza um User
   updateUser(user: User): Observable<User> {
     console.log(user.id)
-    return this.httpClient.put<User>(this.url + '/' + user.id, JSON.stringify(User), this.httpOptions)
+    return this.httpClient.put<User>(this.url + '/' + user.id, JSON.stringify(user), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

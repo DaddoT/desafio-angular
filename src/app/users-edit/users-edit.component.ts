@@ -49,13 +49,12 @@ export class UsersEditComponent implements OnInit {
 }
 
 updateUser(form) {
-  console.log(form)
   this.isLoadingResults = true;
   this.api.updateUser(form)
     .subscribe(res => {
         console.log(form)
         this.isLoadingResults = false;
-        this.router.navigate(['/user-info/' + this.id]);
+        this.router.navigate(['/users-info/' + form.id]);
       }, (err) => {
         console.log(err);
         this.isLoadingResults = false;
