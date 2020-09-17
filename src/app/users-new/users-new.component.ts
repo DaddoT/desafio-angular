@@ -29,15 +29,12 @@ export class UsersNewComponent implements OnInit {
 
   addUser(form: NgForm) {
     this.isLoadingResults = true;
-    console.log(form)
 
     this.api.addUser(form).subscribe( res => {       
         const id = res['id'];
-        console.log(id)
         this.isLoadingResults = false;
         this.router.navigate(['/users-info/', id]);
         
-
         }, (err) => {
 
           console.log(err);

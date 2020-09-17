@@ -37,7 +37,7 @@ export class ApiService {
       )
   }
 
-  getUserByCPF(input: any): Observable<User> {
+  getUserByCPForName(input: any): Observable<User> {
     let url;
     input = Object.values(input)[0]
 
@@ -46,7 +46,7 @@ export class ApiService {
     } else {
       url = `${this.url}/?cpf=${input}`
     }
-    
+
     return this.httpClient.get<User>(url)
       .pipe(
         retry(2),
@@ -56,7 +56,6 @@ export class ApiService {
 
   // adiciona um User ao db
   addUser(user): Observable<User> {
-    console.log(JSON.stringify(user))
     return this.httpClient.post<User>(this.url, JSON.stringify(user), this.httpOptions)
       .pipe(
         catchError(this.handleError)
@@ -65,7 +64,6 @@ export class ApiService {
 
   // utualiza um User
   updateUser(user: User): Observable<User> {
-    console.log(user.id)
     return this.httpClient.put<User>(this.url + '/' + user.id, JSON.stringify(user), this.httpOptions)
       .pipe(
         retry(1),

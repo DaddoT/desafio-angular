@@ -36,7 +36,6 @@ export class UsersEditComponent implements OnInit {
 
  getUser(id) {
   this.api.getUser(id).subscribe(data => {
-    console.log(data)
     this.productForm.setValue({
       id: data[0].id,
       nome: data[0].nome,
@@ -52,7 +51,6 @@ updateUser(form) {
   this.isLoadingResults = true;
   this.api.updateUser(form)
     .subscribe(res => {
-        console.log(form)
         this.isLoadingResults = false;
         this.router.navigate(['/users-info/' + form.id]);
       }, (err) => {

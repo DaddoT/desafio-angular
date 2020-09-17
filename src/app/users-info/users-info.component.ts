@@ -24,7 +24,6 @@ export class UsersInfoComponent implements OnInit {
     this.api.getUser(id)
       .subscribe(data => {
         this.dataSource = data;
-        console.log(data)
         this.isLoadingResults = false;
       });
   }

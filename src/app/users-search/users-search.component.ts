@@ -24,10 +24,9 @@ export class UsersSearchComponent implements OnInit {
   }
 
   getUser(input) {
-    this.api.getUserByCPF(input)
+    this.api.getUserByCPForName(input)
       .subscribe( data => {
         this.dataSource = data;
-        console.log(data)
 
          this.router.navigate(['/users-info/', data[0].id]);
       });
