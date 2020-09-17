@@ -1,14 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { ApiService } from 'src/service/api.service';
-import { User } from 'src/model/user';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
+import {ApiService} from 'src/service/api.service';
+import {User} from 'src/model/user';
 
-@Component({
-  selector: 'app-users-new',
-  templateUrl: './users-new.component.html',
-  styleUrls: ['./users-new.component.scss']
-})
+@Component({selector: 'app-users-new', templateUrl: './users-new.component.html', styleUrls: ['./users-new.component.scss']})
 export class UsersNewComponent implements OnInit {
 
   user = {} as User;
@@ -27,20 +23,20 @@ export class UsersNewComponent implements OnInit {
   });
   }
 
-  addUser(form: NgForm) {
-    this.isLoadingResults = true;
+    addUser(form : NgForm) {
+        this.isLoadingResults = true;
 
-    this.api.addUser(form).subscribe( res => {       
-        const id = res['id'];
-        this.isLoadingResults = false;
-        this.router.navigate(['/users-info/', id]);
-        
+        this.api.addUser(form).subscribe(res => {
+            const id = res['id'];
+            this.isLoadingResults = false;
+            this.router.navigate(['/users-info/', id]);
+
         }, (err) => {
 
-          console.log(err);
+            console.log(err);
 
-          this.isLoadingResults = false;
+            this.isLoadingResults = false;
         });
-  }
+    }
 
 }
