@@ -22,8 +22,6 @@ dataSource: User[];
     this._api.getUsers()
     .subscribe(res => {
       this.dataSource = res;
-      console.log(res)
-      console.log(res.length)
        if (res.length === 0) {
          this._snackBar.open('Nenhum usuário encontrado', 'Fechar', {
       duration: 60000,

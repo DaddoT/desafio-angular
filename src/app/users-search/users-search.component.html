@@ -5,7 +5,7 @@
       <form class="example-container" [formGroup]="productForm" (ngSubmit)="getUser(productForm.value)">
         <div class="formu">
         <mat-form-field>
-          <input matInput name="cpf" placeholder="CPF" formControlName="cpf">
+          <input matInput name="input" placeholder="Nome ou CPF" formControlName="input">
         </mat-form-field> 
         <button type="submit" [disabled]="!productForm.valid" mat-button color="default" >Buscar</button> 
       </div>

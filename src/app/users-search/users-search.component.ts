@@ -19,12 +19,12 @@ export class UsersSearchComponent implements OnInit {
 
    ngOnInit() {
      this.productForm = this.formBuilder.group({   
-      'cpf' : [null, Validators.required]
+      'input' : [null, Validators.required]
   });
   }
 
-  getUser(cpf) {
-    this.api.getUserByCPF(cpf)
+  getUser(input) {
+    this.api.getUserByCPF(input)
       .subscribe( data => {
         this.dataSource = data;
         console.log(data)

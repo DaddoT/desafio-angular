@@ -37,9 +37,16 @@ export class ApiService {
       )
   }
 
-  getUserByCPF(cpf: number): Observable<User> {
-    cpf = Object.values(cpf)[0]
-    const url = `${this.url}/?cpf=${cpf}`
+  getUserByCPF(input: any): Observable<User> {
+    let url;
+    input = Object.values(input)[0]
+
+    if (isNaN(input)) {
+      url = `${this.url}/?nome=${input}`
+    } else {
+      url = `${this.url}/?cpf=${input}`
+    }
+    
     return this.httpClient.get<User>(url)
       .pipe(
         retry(2),
