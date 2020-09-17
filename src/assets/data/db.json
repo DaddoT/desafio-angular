@@ -1,12 +1,36 @@
 {
   "users": [
     {
-      "nome": "daddo",
-      "cpf": "123",
-      "idade": "12",
-      "email": "daddota00@gmail.com",
-      "telefone": "98765",
-      "id": 1
+      "id": 1,
+      "nome": "Heitor Luis Mario",
+      "cpf": "58860966124",
+      "idade": "22",
+      "email": "heitorluismariosales__heitorluismariosales@texfuse.com.br",
+      "telefone": "9528830626"
+    },
+    {
+      "id": 2,
+      "nome": "Thiago Caio Porto",
+      "cpf": "33660729892",
+      "idade": "18",
+      "email": "thiagocaiocaueporto__thiagocaiocaueporto@abcturismo.com.br",
+      "telefone": "6828315609"
+    },
+    {
+      "nome": "Raquel Maya Figueiredo",
+      "cpf": "22624274880",
+      "idade": "23",
+      "email": "raquelmayafigueiredo-82@vgl.com.br",
+      "telefone": "1136162664",
+      "id": 3
+    },
+    {
+      "nome": "Tatiane Rebeca Bárbara dos Santos",
+      "cpf": "60400088819",
+      "idade": "18",
+      "email": "tatianebarbarasantos@autvale.com",
+      "telefone": "5426060827",
+      "id": 4
     }
   ]
 }
