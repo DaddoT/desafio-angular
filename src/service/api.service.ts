@@ -10,17 +10,14 @@ import { User } from 'src/model/user';
 })
 export class ApiService {
 
-  url = 'http://localhost:3000/users'; // api rest fake
+  url = 'http://localhost:3000/users'; 
 
-  // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
 
-  // Headers
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  // Obtem todos os Usuários
   getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.url)
       .pipe(
@@ -28,7 +25,6 @@ export class ApiService {
         catchError(this.handleError))
   }
 
-  // Obtem um Usuário pelo id
   getUser(id: number): Observable<User> {
     return this.httpClient.get<User>(this.url + '/?id=' + id)
       .pipe(
@@ -54,7 +50,6 @@ export class ApiService {
       )
   }
 
-  // adiciona um User ao db
   addUser(user): Observable<User> {
     return this.httpClient.post<User>(this.url, JSON.stringify(user), this.httpOptions)
       .pipe(
@@ -62,7 +57,6 @@ export class ApiService {
       )
   }
 
-  // utualiza um User
   updateUser(user: User): Observable<User> {
     return this.httpClient.put<User>(this.url + '/' + user.id, JSON.stringify(user), this.httpOptions)
       .pipe(
@@ -71,7 +65,6 @@ export class ApiService {
       )
   }
 
-  // deleta um User
   deleteUser(id) {
     return this.httpClient.delete<User>(this.url + '/' + id, this.httpOptions)
       .pipe(
@@ -80,15 +73,12 @@ export class ApiService {
       )
   }
 
-  // Manipulação de erros
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
-      // Erro ocorreu no lado do client
       errorMessage = error.error.message;
     } else {
       console.log(error)
-      // Erro ocorreu no lado do servidor
       errorMessage = 'Código do erro: ${error.status}, ' + 'menssagem: ${error.message}';
     }
     console.log(errorMessage);
