@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Passo a passo de execução do programa
+Para executar o programa, seguir os passos abaixo:
+
+ - Liberar as portas 4200 e 3000 do localhost
+ - Executar comando: ng serve
+ - Executar comando: json-server --watch src/assets/data/db.json
+
+
